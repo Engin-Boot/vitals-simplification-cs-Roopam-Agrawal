@@ -3,14 +3,25 @@ using System.Diagnostics;
 
 class Checker
 {
-    static bool vitalsAreOk(float bpm, float spo2, float respRate) {
+    static bool bpmIsOk(float bpm){
         if(bpm < 70 || bpm > 150) {
             return false;
-        } else if(spo2 < 90) {
-            return false;
-        } else if(respRate < 30 || respRate > 95) {
+        }
+    }
+    static bool spo2IsOk(float bpm){
+        if(spo2 < 90) {
             return false;
         }
+    }
+    static bool respRate2IsOk(float bpm){
+        if(respRate < 30 || respRate > 95) {
+            return false;
+        }
+    }
+    static bool vitalsAreOk(float bpm, float spo2, float respRate) {
+        if(!bpmIsOk(bpm) || !spo2IsOk(spo2) || !respRateIsOk(respRate)) {
+            return false;
+        } 
         return true;
     }
     static void ExpectTrue(bool expression) {
