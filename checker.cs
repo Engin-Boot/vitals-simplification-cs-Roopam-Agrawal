@@ -7,16 +7,19 @@ class Checker
         if(bpm < 70 || bpm > 150) {
             return false;
         }
+        return true;
     }
     static bool spo2IsOk(float bpm){
         if(spo2 < 90) {
             return false;
         }
+        return true;
     }
     static bool respRate2IsOk(float bpm){
         if(respRate < 30 || respRate > 95) {
             return false;
         }
+        return true;
     }
     static bool vitalsAreOk(float bpm, float spo2, float respRate) {
         if(!bpmIsOk(bpm) || !spo2IsOk(spo2) || !respRateIsOk(respRate)) {
