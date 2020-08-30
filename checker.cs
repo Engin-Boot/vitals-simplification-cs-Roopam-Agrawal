@@ -9,13 +9,13 @@ class Checker
         }
         return true;
     }
-    static bool spo2IsOk(float bpm){
+    static bool spo2IsOk(float spo2){
         if(spo2 < 90) {
             return false;
         }
         return true;
     }
-    static bool respRate2IsOk(float bpm){
+    static bool respRate2IsOk(float respRate){
         if(respRate < 30 || respRate > 95) {
             return false;
         }
